@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "VERA HDMI Card"
-Date "2025-10-24"
+Date "2025-10-29"
 Rev "1.1"
 Comp "RetroBitLab"
 Comment1 "Gianluca Renzi"
