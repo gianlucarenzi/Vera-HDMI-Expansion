@@ -4,3 +4,6 @@
 *-JLCPCB-BOM.csv
 *-JLCPCB-CPL.csv
 /production/
+*report*.txt
+*.zip
+*.backup*
