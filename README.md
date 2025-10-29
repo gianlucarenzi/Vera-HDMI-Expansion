@@ -43,7 +43,7 @@ The complete circuit schematic is available as a PDF for easy viewing.
 
 An interactive HTML Bill of Materials (iBOM) is provided to simplify component identification and assembly.
 
-- **[➡️ Open Interactive BOM](BOM/ibom.html)**
+- **[➡️ Open Interactive BOM](https://gianlucarenzi.github.io/Vera-HDMI-Expansion/BOM/ibom.html)**
 
 ---
 
