@@ -665,8 +665,8 @@ P 3335 3960
 F 0 "R3" H 3394 4001 50  0000 L CNN
 F 1 "75R" H 3370 3915 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" H 3335 3960 50  0001 C CNN
-F 3 "https://www.lcsc.com/datasheet/C20142801.pdf" H 3335 3960 50  0001 C CNN
-F 4 "C20142801" H 3335 3960 50  0001 C CNN "LCSC"
+F 3 "https://www.lcsc.com/datasheet/C317238.pdf" H 3335 3960 50  0001 C CNN
+F 4 "C317238" H 3335 3960 50  0001 C CNN "LCSC"
 	1    3335 3960
 	1    0    0    -1  
 $EndComp
@@ -677,8 +677,8 @@ P 3575 3960
 F 0 "R4" H 3634 4001 50  0000 L CNN
 F 1 "75R" H 3610 3915 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" H 3575 3960 50  0001 C CNN
-F 3 "https://www.lcsc.com/datasheet/C20142801.pdf" H 3575 3960 50  0001 C CNN
-F 4 "C20142801" H 3575 3960 50  0001 C CNN "LCSC"
+F 3 "https://www.lcsc.com/datasheet/C317238.pdf" H 3575 3960 50  0001 C CNN
+F 4 "C317238" H 3575 3960 50  0001 C CNN "LCSC"
 	1    3575 3960
 	1    0    0    -1  
 $EndComp
@@ -689,8 +689,8 @@ P 3825 3960
 F 0 "R5" H 3884 4001 50  0000 L CNN
 F 1 "75R" H 3865 3915 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" H 3825 3960 50  0001 C CNN
-F 3 "https://www.lcsc.com/datasheet/C20142801.pdf" H 3825 3960 50  0001 C CNN
-F 4 "C20142801" H 3825 3960 50  0001 C CNN "LCSC"
+F 3 "https://www.lcsc.com/datasheet/C317238.pdf" H 3825 3960 50  0001 C CNN
+F 4 "C317238" H 3825 3960 50  0001 C CNN "LCSC"
 	1    3825 3960
 	1    0    0    -1  
 $EndComp
