@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "VERA HDMI Card"
-Date "2026-09-03"
+Date "2026-11-04"
 Rev "1.1"
 Comp "RetroBitLab"
 Comment1 "Gianluca Renzi"
@@ -1644,8 +1644,6 @@ Wire Wire Line
 	10010 3080 10010 3205
 Wire Wire Line
 	10210 5405 10210 5475
-Wire Wire Line
-	10310 5475 10310 5405
 $Comp
 L power:GND #PWR015
 U 1 1 69BFD751
@@ -1659,7 +1657,6 @@ F 3 "" H 10060 5525 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	10110 5475 10210 5475
-Connection ~ 10210 5475
 Wire Wire Line
 	10110 5405 10110 5475
 Wire Wire Line
@@ -1677,8 +1674,6 @@ Wire Wire Line
 Wire Wire Line
 	9810 5475 9910 5475
 Connection ~ 9910 5475
-Wire Wire Line
-	10210 5475 10310 5475
 Wire Wire Line
 	10060 5525 10060 5475
 Connection ~ 10060 5475
@@ -2187,4 +2182,11 @@ $EndComp
 Connection ~ 1865 5920
 Wire Wire Line
 	1865 5920 1865 5865
+Wire Wire Line
+	10510 4930 10560 4930
+Wire Wire Line
+	10560 4930 10560 5475
+Wire Wire Line
+	10560 5475 10210 5475
+Connection ~ 10210 5475
 $EndSCHEMATC

@@ -2,14 +2,14 @@
 <export version="D">
   <design>
     <source>/home/gianluca/Progetti-CVS/ATARI/vera-hdmi-expansion/VERA-HDMI-Expansion.sch</source>
-    <date>Wed 04 Nov 2026 11:18:56 AM CET</date>
+    <date>Wed 04 Nov 2026 04:43:23 PM CET</date>
     <tool>kicadcli 1.1 (KiCad 5 legacy schematic, pcbnew 5)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>VERA HDMI Card</title>
         <company>RetroBitLab</company>
         <rev>1.1</rev>
-        <date>2026-09-03</date>
+        <date>2026-11-04</date>
         <source>VERA-HDMI-Expansion.sch</source>
         <comment number="1" value="Gianluca Renzi"/>
         <comment number="2" value=""/>

@@ -11,3 +11,4 @@ eeplot-src/
 # routing exchange files (exported/imported in pcbnew, made by tools/)
 /VERA-HDMI-Expansion.dsn
 /VERA-HDMI-Expansion.ses
+*.sch-bak
