@@ -45,6 +45,14 @@ An interactive HTML Bill of Materials (iBOM) is provided to simplify component i
 
 - **[➡️ Open Interactive BOM](https://gianlucarenzi.github.io/Vera-HDMI-Expansion/BOM/ibom.html)**
 
+### Mechanical Assembly
+
+The board is mounted on the VERA-MODULE-RBL-XE with four 14 mm M3 standoffs and
+eight M3x6 screws; J2 plugs into the J1 box header of the module.
+
+- **[➡️ Mechanical BOM and stacking](Documentation/MECHANICAL-BOM.md)**
+- 3D model of the stack: [`images/VERA-XE-HDMI-assembly.step`](images/VERA-XE-HDMI-assembly.step)
+
 ---
 
 ## 🏭 Manufacturing

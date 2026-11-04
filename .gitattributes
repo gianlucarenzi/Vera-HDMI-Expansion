@@ -1,0 +1,2 @@
+images/VERA-XE-HDMI-assembly.step filter=lfs diff=lfs merge=lfs -text
+images/*.FCStd filter=lfs diff=lfs merge=lfs -text
