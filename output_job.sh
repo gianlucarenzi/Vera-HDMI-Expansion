@@ -188,18 +188,18 @@ if [ -f ${PCBNAME}_cpl_top.csv ]; then
 	# Verify if the bot is present
 	if [ -f ${PCBNAME}_cpl_bot.csv ]; then
 		# We are 2 side board
-		./clean_virtual.sh ${PCBNAME}_cpl_top.csv ${PCBNAME}_cpl_bot.csv ${PCBNAME}.kicad_pcb
+		./clean_virtual.sh ${PCBNAME}_cpl_top.csv ${PCBNAME}_cpl_bot.csv --pcb ${PCBNAME}.kicad_pcb
 		cat ${PCBNAME}_cpl_top.csv <(tail -n +2 ${PCBNAME}_cpl_bot.csv) > ${PCBNAMEOUT}-JLCPCB-CPL.csv
 	else
 		# We have only TOP Side components!
-		./clean_virtual.sh ${PCBNAME}_cpl_top.csv ${PCBNAME}.kicad_pcb
+		./clean_virtual.sh ${PCBNAME}_cpl_top.csv --pcb ${PCBNAME}.kicad_pcb
 		cp ${PCBNAME}_cpl_top.csv ${PCBNAMEOUT}-JLCPCB-CPL.csv
 	fi
 else
 	# Verify if the bot is present
 	if [ -f ${PCBNAME}_cpl_bot.csv ]; then
 		# We have only BOT side components
-		./clean_virtual.sh ${PCBNAME}_cpl_bot.csv ${PCBNAME}.kicad_pcb
+		./clean_virtual.sh ${PCBNAME}_cpl_bot.csv --pcb ${PCBNAME}.kicad_pcb
 		cp ${PCBNAME}_cpl_bot.csv ${PCBNAMEOUT}-JLCPCB-CPL.csv
 	else
 		# There is no top and no bottom!
@@ -207,6 +207,19 @@ else
 		exit 1
 	fi
 fi
+
+# Gerber e forature con pcbnew di KiCad 5 e le impostazioni di stampa
+# salvate nel PCB (prima andavano esportati a mano da pcbnew). production/
+# viene svuotata prima, cosi' nello zip non finiscono file vecchi.
+# Le zone si usano come salvate nel PCB; con REFILL_ZONES=1 vengono
+# riempite di nuovo prima della stampa (il .kicad_pcb non viene modificato):
+#   REFILL_ZONES=1 ./output_job.sh 1.1
+echo "Creating Gerber and drill files"
+mkdir -p production
+find production -mindepth 1 -maxdepth 1 ! -name .gitignore -exec rm -rf {} +
+GERBER_ARGS=()
+[ "${REFILL_ZONES}" = "1" ] && GERBER_ARGS+=(--refill-zones)
+./run_pcbnew.sh generate_gerbers.py "${GERBER_ARGS[@]}" ${PCBNAME}.kicad_pcb || { echo "Error on creating the Gerber files."; exit 1; }
 
 echo "Creating PDF..."
 # Set KICAD_SYMBOL_DIR to help eeplot find libraries (though eeplot takes them as arguments)
