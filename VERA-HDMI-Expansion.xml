@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/gianluca/Progetti-CVS/ATARI/vera-hdmi-expansion/VERA-HDMI-Expansion.sch</source>
-    <date>Mon 02 Nov 2026 10:43:18 AM CET</date>
+    <date>Mon 02 Nov 2026 05:33:54 PM CET</date>
     <tool>kicadcli 1.1 (KiCad 5 legacy schematic, pcbnew 5)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -722,13 +722,13 @@
       <tstamp>69092752</tstamp>
     </comp>
     <comp ref="J2">
-      <value>CONN_SMD_HEADER_BOX_02x08_Odd_Even_2.54mm</value>
-      <footprint>RetroBitLab:PinHeader_BOX_2x08_P2.54mm_Vertical_SMD</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C2685064.pdf</datasheet>
+      <value>CONN_SMD_02x08_Odd_Even_2.54mm</value>
+      <footprint>RetroBitLab:PinSocket_2x08_P2.54mm_Vertical_SMD_Bottom</footprint>
+      <datasheet>https://www.lcsc.com/datasheet/C3975153.pdf</datasheet>
       <fields>
-        <field name="LCSC">C2685064</field>
+        <field name="LCSC">C3975153</field>
       </fields>
-      <libsource lib="RetroBitLab" part="CONN_SMD_HEADER_BOX_02x08_Odd_Even_2.54mm" description="2.54mm -40℃~+105℃ 3A 2x8P 8 2 IDC Header 2.54mm Surface Mount,Vertical SMD,P=2.54mm Free Hanging, Panel Mount ROHS"/>
+      <libsource lib="RetroBitLab" part="CONN_SMD_02x08_Odd_Even_2.54mm" description="2.54mm 2.54mm 2 3A -40℃~+105℃ Copper Alloy 16P Surface Mount,Vertical 2x8P Top 8.5mm Square Hole SMD,P=2.54mm Female Headers ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>690D0597</tstamp>
     </comp>
@@ -1016,17 +1016,17 @@
         <pin num="SH" name="SH" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="RetroBitLab" part="CONN_SMD_HEADER_BOX_02x08_Odd_Even_2.54mm">
-      <description>2.54mm -40℃~+105℃ 3A 2x8P 8 2 IDC Header 2.54mm Surface Mount,Vertical SMD,P=2.54mm Free Hanging, Panel Mount ROHS</description>
-      <docs>https://www.lcsc.com/datasheet/C2685064.pdf</docs>
+    <libpart lib="RetroBitLab" part="CONN_SMD_02x08_Odd_Even_2.54mm">
+      <description>2.54mm 2.54mm 2 3A -40℃~+105℃ Copper Alloy 16P Surface Mount,Vertical 2x8P Top 8.5mm Square Hole SMD,P=2.54mm Female Headers ROHS</description>
+      <docs>https://www.lcsc.com/datasheet/C3975153.pdf</docs>
       <footprints>
         <fp>Connector*:*_2x??_*</fp>
       </footprints>
       <fields>
         <field name="Reference">J</field>
-        <field name="Value">CONN_SMD_HEADER_BOX_02x08_Odd_Even_2.54mm</field>
-        <field name="Footprint">RetroBitLab:PinHeader_BOX_2x08_P2.54mm_Vertical_SMD</field>
-        <field name="LCSC">C2685064</field>
+        <field name="Value">CONN_SMD_02x08_Odd_Even_2.54mm</field>
+        <field name="Footprint">RetroBitLab:PinSocket_2x08_P2.54mm_Vertical_SMD</field>
+        <field name="LCSC">C3975153</field>
       </fields>
       <pins>
         <pin num="1" name="Pin_1" type="passive"/>

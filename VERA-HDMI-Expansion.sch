@@ -2037,14 +2037,14 @@ Wire Wire Line
 Wire Wire Line
 	4195 6655 4445 6655
 $Comp
-L RetroBitLab:CONN_SMD_HEADER_BOX_02x08_Odd_Even_2.54mm J2
+L RetroBitLab:CONN_SMD_02x08_Odd_Even_2.54mm J2
 U 1 1 690D0597
 P 3995 6955
 F 0 "J2" H 4045 7380 50  0000 C CNN
-F 1 "CONN_SMD_HEADER_BOX_02x08_Odd_Even_2.54mm" H 4045 6455 50  0001 C CNN
-F 2 "RetroBitLab:PinHeader_BOX_2x08_P2.54mm_Vertical_SMD" H 3995 6955 50  0001 C CNN
-F 3 "https://www.lcsc.com/datasheet/C2685064.pdf" H 3995 6955 50  0001 C CNN
-F 4 "C2685064" H 3995 6955 50  0001 C CNN "LCSC"
+F 1 "CONN_SMD_02x08_Odd_Even_2.54mm" H 4045 6455 50  0001 C CNN
+F 2 "RetroBitLab:PinSocket_2x08_P2.54mm_Vertical_SMD_Bottom" H 3995 6955 50  0001 C CNN
+F 3 "https://www.lcsc.com/datasheet/C3975153.pdf" H 3995 6955 50  0001 C CNN
+F 4 "C3975153" H 3995 6955 50  0001 C CNN "LCSC"
 	1    3995 6955
 	-1   0    0    -1  
 $EndComp
