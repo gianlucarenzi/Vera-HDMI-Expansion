@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/home/gianluca/Progetti-CVS/ATARI/vera-hdmi-expansion/VERA-HDMI-Expansion.sch</source>
-    <date>Wed 04 Nov 2026 04:43:23 PM CET</date>
-    <tool>kicadcli 1.1 (KiCad 5 legacy schematic, pcbnew 5)</tool>
+    <source>/home/debian/Progetti/ATARI/Vera-HDMI-Expansion/VERA-HDMI-Expansion.sch</source>
+    <date>Sat 14 Nov 2026 12:50:18 PM CET</date>
+    <tool>kicadcli 1.2 (KiCad 5 legacy schematic, pcbnew 5)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>VERA HDMI Card</title>
@@ -1145,31 +1145,31 @@
   </libparts>
   <libraries>
     <library logical="CCAP0603">
-      <uri>/home/gianluca/Progetti/RetroBitLab-Library/CCAP0603.lib</uri>
+      <uri>/home/debian/Progetti/RetroBitLab-Library/CCAP0603.lib</uri>
     </library>
     <library logical="CCAP0805">
-      <uri>/home/gianluca/Progetti/RetroBitLab-Library/CCAP0805.lib</uri>
+      <uri>/home/debian/Progetti/RetroBitLab-Library/CCAP0805.lib</uri>
     </library>
     <library logical="CLED0805">
-      <uri>/home/gianluca/Progetti/RetroBitLab-Library/CLED0805.lib</uri>
+      <uri>/home/debian/Progetti/RetroBitLab-Library/CLED0805.lib</uri>
     </library>
     <library logical="CRES0603">
-      <uri>/home/gianluca/Progetti/RetroBitLab-Library/CRES0603.lib</uri>
+      <uri>/home/debian/Progetti/RetroBitLab-Library/CRES0603.lib</uri>
     </library>
     <library logical="CRES0805">
-      <uri>/home/gianluca/Progetti/RetroBitLab-Library/CRES0805.lib</uri>
+      <uri>/home/debian/Progetti/RetroBitLab-Library/CRES0805.lib</uri>
     </library>
     <library logical="Connector">
-      <uri>/usr/share/kicad/library/Connector.lib</uri>
+      <uri>/home/debian/.cache/kicad5/library/Connector.lib</uri>
     </library>
     <library logical="Mechanical">
-      <uri>/usr/share/kicad/library/Mechanical.lib</uri>
+      <uri>/home/debian/.cache/kicad5/library/Mechanical.lib</uri>
     </library>
     <library logical="RetroBitLab">
-      <uri>/home/gianluca/Progetti/RetroBitLab-Library/RetroBitLab.lib</uri>
+      <uri>/home/debian/Progetti/RetroBitLab-Library/RetroBitLab.lib</uri>
     </library>
     <library logical="TCAP3528">
-      <uri>/home/gianluca/Progetti/RetroBitLab-Library/TCAP3528.lib</uri>
+      <uri>/home/debian/Progetti/RetroBitLab-Library/TCAP3528.lib</uri>
     </library>
   </libraries>
   <nets>

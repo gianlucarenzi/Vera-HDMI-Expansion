@@ -24,14 +24,31 @@ fi
 
 KICAD_PCB_FILE="$1"
 
-echo "► Setting PYTHONPATH to: $PYTHON_MODULE_PATH"
+# The pcbnew module comes from a system KiCad 5 (e.g. Debian 11) when there
+# is one (version 5), otherwise from the KiCad 5 AppImage ("kicad5 --python", v2.2.0+)
+# only a pcbnew of KiCad 5: a system KiCad 6 or later has another API
+if PYTHONPATH=$PYTHON_MODULE_PATH ${PYTHON3} -c "import pcbnew, sys; sys.exit(0 if pcbnew.GetBuildVersion().lstrip('(').startswith('5') else 1)" >/dev/null 2>&1; then
+    echo "► Using system pcbnew, PYTHONPATH: $PYTHON_MODULE_PATH"
+    RUN_PYTHON=(env PYTHONPATH="$PYTHON_MODULE_PATH" "${PYTHON3}")
+elif command -v kicad5 >/dev/null 2>&1; then
+    echo "► Using pcbnew from the KiCad 5 AppImage (kicad5 --python)"
+    RUN_PYTHON=(kicad5 --python)
+else
+    echo "Error: no pcbnew module found. Install KiCad 5 or put the KiCad 5"
+    echo "AppImage (v2.2.0 or later) in the PATH as 'kicad5'."
+    exit 1
+fi
 echo "► Executing script: $PYTHON_SCRIPT"
 echo "► Processing file: $KICAD_PCB_FILE"
 echo "--------------------------------------------------"
 
-# Set the environment variable and run the python script
-PYTHONPATH=$PYTHON_MODULE_PATH ${PYTHON3} "$PYTHON_SCRIPT" "$KICAD_PCB_FILE"
+"${RUN_PYTHON[@]}" "$PYTHON_SCRIPT" "$KICAD_PCB_FILE"
+RET=$?
 
 echo "--------------------------------------------------"
+if [ $RET -ne 0 ]; then
+    echo "✘ Script execution failed."
+    exit $RET
+fi
 echo "✔ Script execution finished."
 

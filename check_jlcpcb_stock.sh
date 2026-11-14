@@ -25,22 +25,24 @@ done
 cd "$(dirname "$0")" || exit 2
 export KILIBPATH=${KILIBPATH:-$HOME/Progetti/RetroBitLab-Library}
 
-# kicadcli (utilities/kicadcli) makes the XML from the schematic: if it is not
-# in the PATH, install it into $HOME/bin and add $HOME/bin to the PATH
-if ! command -v kicadcli >/dev/null 2>&1; then
-	echo "kicadcli not found in the PATH: installing it into ${HOME}/bin"
+# kicadcli (utilities/kicadcli): command line tool for the KiCad 5 schematic
+# (eeschema 5 has no CLI), it makes the XML from the schematic. Installed into
+# $HOME/bin when missing or different from the copy of this project (that
+# one stops on parts without annotation), with $HOME/bin added to the PATH
+if ! cmp -s "utilities/kicadcli" "${HOME}/bin/kicadcli"; then
+	echo "kicadcli: installing the copy of this project into ${HOME}/bin"
 	mkdir -p "${HOME}/bin"
-	install -m 755 utilities/kicadcli "${HOME}/bin/kicadcli" || { echo "ERROR: kicadcli install failed."; exit 2; }
-	case ":${PATH}:" in
-		*":${HOME}/bin:"*) ;;
-		*) export PATH="${HOME}/bin:${PATH}" ;;
-	esac
+	install -m 755 "utilities/kicadcli" "${HOME}/bin/kicadcli" || { echo "ERROR: kicadcli install failed."; exit 2; }
 fi
+case ":${PATH}:" in
+	*":${HOME}/bin:"*) ;;
+	*) export PATH="${HOME}/bin:${PATH}" ;;
+esac
 
 WORK=$(mktemp -d)
 trap 'rm -rf "${WORK}"' EXIT
 kicadcli sch export-xml ${PCBNAME}.sch -o "${WORK}/bom.xml" >/dev/null || exit 2
-xsltproc -o "${WORK}/bom.csv" ${HOME}/.kicad/bom/bom2grouped_csv_jlcpcb.xsl "${WORK}/bom.xml" || exit 2
+${PYTHON3} generate_bom.py "${WORK}/bom.xml" "${WORK}/bom.csv" >/dev/null || exit 2
 ${PYTHON3} jlcpcb-check-bom.py "${WORK}/bom.csv" "${WORK}/jlcpcb-bom.csv" >/dev/null
 [ -s "${WORK}/jlcpcb-bom.csv" ] || { echo "Error on creating the JLCPCB BOM."; exit 2; }
 

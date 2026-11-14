@@ -7,30 +7,77 @@ LOCAL_UTILS_DIR="$(pwd)/utilities"
 EEPLOT_SRC_DIR="eeplot-src" # Relative path for source
 EEPLOT_EXEC="${LOCAL_UTILS_DIR}/bin/eeplot"
 EESHOW_EXEC="${LOCAL_UTILS_DIR}/bin/eeshow" # Assuming eeshow is also built
-EEPLOT_PATCH="$(pwd)/patches/eeplot-page-size.patch"
+EEPLOT_PATCHES=("$(pwd)"/patches/eeplot-*.patch)
+# Patches the installed eeplot was built with (see eeplot_patches_id)
+EEPLOT_STAMP="${LOCAL_UTILS_DIR}/bin/.eeplot-patches"
 
-# Applies our local fix (each schematic sheet keeps its own PDF page size
-# and is drawn flush with its own origin, instead of every page being
-# forced to the size of the largest sheet and left anchored top-left).
+# Applies our local fixes to the eeplot source:
+# - eeplot-page-size.patch: each schematic sheet keeps its own PDF page size
+#   and is drawn flush with its own origin, instead of every page being
+#   forced to the size of the largest sheet and left anchored top-left
+# - eeplot-kicad5-schematics.patch: symbols of a library given without a
+#   directory (e.g. the project -rescue.lib) are found, and embedded images
+#   ($Bitmap) are skipped instead of stopping the plot
+# - eeplot-pdf14-toc.patch: the PDF with the table of contents is written as
+#   PDF 1.4, because cairo 1.18 (Debian 13) otherwise uses cross-reference
+#   streams and the TOC writer aborts with "pdftoc_end: Assertion"
 # Safe to call again: it detects an already-applied patch and skips it.
 apply_eeplot_patches() {
-    [ -f "${EEPLOT_PATCH}" ] || return 0
-    if (cd "${EEPLOT_SRC_DIR}" && git apply --check "${EEPLOT_PATCH}" 2>/dev/null); then
-        echo "Applying local patch: $(basename "${EEPLOT_PATCH}")"
-        (cd "${EEPLOT_SRC_DIR}" && git apply "${EEPLOT_PATCH}") || {
-            echo "ERROR: failed to apply ${EEPLOT_PATCH}."
+    local patch
+    for patch in "${EEPLOT_PATCHES[@]}"; do
+        [ -f "${patch}" ] || continue
+        if (cd "${EEPLOT_SRC_DIR}" && git apply --check "${patch}" 2>/dev/null); then
+            echo "Applying local patch: $(basename "${patch}")"
+            (cd "${EEPLOT_SRC_DIR}" && git apply "${patch}") || {
+                echo "ERROR: failed to apply ${patch}."
+                exit 1
+            }
+        elif (cd "${EEPLOT_SRC_DIR}" && git apply --check --reverse "${patch}" 2>/dev/null); then
+            echo "Local patch $(basename "${patch}") already applied, skipping."
+        else
+            echo "--------------------------------------------------------------------"
+            echo "ERROR: ${patch} does not apply cleanly to ${EEPLOT_SRC_DIR}."
+            echo "The upstream eeplot source may have changed; the patch needs a refresh."
+            echo "--------------------------------------------------------------------"
             exit 1
-        }
-    elif (cd "${EEPLOT_SRC_DIR}" && git apply --check --reverse "${EEPLOT_PATCH}" 2>/dev/null); then
-        echo "Local patch $(basename "${EEPLOT_PATCH}") already applied, skipping."
-    else
+        fi
+    done
+}
+
+eeplot_patches_id() {
+    cat "${EEPLOT_PATCHES[@]}" 2>/dev/null | md5sum | cut -d' ' -f1
+}
+
+# System packages needed to build eeplot (fig2dev converts the eeshow icons)
+check_eeplot_deps() {
+    local missing=""
+    for pkg in libgit2-dev fig2dev; do
+        dpkg -s "${pkg}" >/dev/null 2>&1 || missing="${missing} ${pkg}"
+    done
+    if [ -n "${missing}" ]; then
         echo "--------------------------------------------------------------------"
-        echo "ERROR: ${EEPLOT_PATCH} does not apply cleanly to ${EEPLOT_SRC_DIR}."
-        echo "The upstream eeplot source may have changed; the patch needs a refresh."
+        echo "ERROR: System dependencies not found:${missing}"
+        echo "Please run the following command to install them:"
+        echo "sudo apt-get install${missing}"
         echo "--------------------------------------------------------------------"
         exit 1
     fi
+    echo "Dependencies OK."
 }
+
+# A binary built on another Debian release can miss its libraries (e.g.
+# libgit2.so.1.5 after moving from Debian 12 to 13): drop it to rebuild it
+if [ -f "${EEPLOT_EXEC}" ] && ldd "${EEPLOT_EXEC}" | grep -q 'not found'; then
+    echo "--- eeplot was built against other system libraries. Rebuilding. ---"
+    rm -f "${EEPLOT_EXEC}" "${EESHOW_EXEC}"
+fi
+
+# Rebuild it also when it was built with other local patches (e.g. a new
+# one was added to patches/)
+if [ -f "${EEPLOT_EXEC}" ] && [ "$(cat "${EEPLOT_STAMP}" 2>/dev/null)" != "$(eeplot_patches_id)" ]; then
+    echo "--- eeplot was built without the current local patches. Rebuilding. ---"
+    rm -f "${EEPLOT_EXEC}" "${EESHOW_EXEC}"
+fi
 
 # Check if eeplot is already installed locally
 if [ -f "${EEPLOT_EXEC}" ]; then
@@ -38,16 +85,8 @@ if [ -f "${EEPLOT_EXEC}" ]; then
 elif [ -d "${EEPLOT_SRC_DIR}" ]; then
     echo "--- eeplot source found. Updating and rebuilding. ---"
     # 1. Check for system dependencies (still needed for rebuilds)
-            echo "[1/5] Checking system dependencies..."
-            if ! dpkg -s libgit2-dev >/dev/null 2>&1; then
-                echo "--------------------------------------------------------------------"
-                echo "ERROR: System dependency 'libgit2-dev' not found."
-        echo "Please run the following command to install it:"
-        echo "sudo apt-get install libgit2-dev"
-        echo "--------------------------------------------------------------------"
-        exit 1
-    fi
-    echo "Dependencies OK."
+    echo "[1/5] Checking system dependencies..."
+    check_eeplot_deps
 
     # 2. Update source
     echo "[2/5] Updating eeplot source (git pull)..."
@@ -69,20 +108,13 @@ elif [ -d "${EEPLOT_SRC_DIR}" ]; then
     if [ -f "${EEPLOT_SRC_DIR}/eeshow" ]; then
         cp "${EEPLOT_SRC_DIR}/eeshow" "${LOCAL_UTILS_DIR}/bin/" || { echo "ERROR: Copy 'eeshow' failed."; exit 1; }
     fi
+    eeplot_patches_id > "${EEPLOT_STAMP}"
     echo "--- eeplot update and rebuild complete. ---"
 else
     echo "--- eeplot not found locally. Starting one-time setup procedure ---"
     # 1. Check for system dependencies
     echo "[1/6] Checking system dependencies..."
-    if ! dpkg -s libgit2-dev >/dev/null 2>&1; then
-        echo "--------------------------------------------------------------------"
-        echo "ERRORE: Dipendenza di sistema 'libgit2-dev' non trovata."
-        echo "Please run the following command to install it:"
-        echo "sudo apt-get install libgit2-dev"
-        echo "--------------------------------------------------------------------"
-        exit 1
-    fi
-    echo "Dependencies OK."
+    check_eeplot_deps
 
     # 2. Clone the repository
     echo "[2/6] Cloning eeplot repository..."
@@ -116,6 +148,7 @@ else
     echo "[6/6] Cleaning up source files..."
     rm -rf "${EEPLOT_SRC_DIR}"
 
+    eeplot_patches_id > "${EEPLOT_STAMP}"
     echo "--- eeplot installation complete. ---"
 fi
 
@@ -152,18 +185,19 @@ fi
 PCBVER=$1
 PCBNAMEOUT=${PCBNAMEOUT}-v${PCBVER}
 
-# kicadcli: command line tool for the KiCad 5 schematic (eeschema 5 has no
-# CLI). A copy lives in utilities/: if it is not in the PATH, install it into
-# $HOME/bin and add $HOME/bin to the PATH
-if ! command -v kicadcli >/dev/null 2>&1; then
-	echo "kicadcli not found in the PATH: installing it into ${HOME}/bin"
+# kicadcli (utilities/kicadcli): command line tool for the KiCad 5 schematic
+# (eeschema 5 has no CLI), it makes the XML from the schematic. Installed into
+# $HOME/bin when missing or different from the copy of this project (that
+# one stops on parts without annotation), with $HOME/bin added to the PATH
+if ! cmp -s "${LOCAL_UTILS_DIR}/kicadcli" "${HOME}/bin/kicadcli"; then
+	echo "kicadcli: installing the copy of this project into ${HOME}/bin"
 	mkdir -p "${HOME}/bin"
 	install -m 755 "${LOCAL_UTILS_DIR}/kicadcli" "${HOME}/bin/kicadcli" || { echo "ERROR: kicadcli install failed."; exit 1; }
-	case ":${PATH}:" in
-		*":${HOME}/bin:"*) ;;
-		*) export PATH="${HOME}/bin:${PATH}" ;;
-	esac
 fi
+case ":${PATH}:" in
+	*":${HOME}/bin:"*) ;;
+	*) export PATH="${HOME}/bin:${PATH}" ;;
+esac
 
 # The XML netlist that eeschema writes with "Generate Bill of Materials",
 # now made by kicadcli from the schematic
@@ -171,7 +205,9 @@ echo "Creating the XML netlist..."
 kicadcli sch export-xml ${PCBNAME}.sch -o ${PCBNAME}.xml || { echo "Error on creating the XML netlist."; exit 1; }
 
 # Creiamo la BOM per JLCPCB
-${XSLTPROC} -o ${PCBNAME}.csv ${KICADBOMSCRIPT}/bom2grouped_csv_jlcpcb.xsl ${PCBNAME}.xml
+# generate_bom.py groups by value, footprint and LCSC (it replaces the
+# bom2grouped_csv_jlcpcb.xsl of ~/.kicad/bom, which is not on every PC)
+${PYTHON3} generate_bom.py ${PCBNAME}.xml ${PCBNAME}.csv || { echo "Error on creating the BOM."; exit 1; }
 
 echo "Creating BOM for JLCPCB"
 ${PYTHON3} jlcpcb-check-bom.py ${PCBNAME}.csv ${PCBNAMEOUT}-JLCPCB-BOM.csv
@@ -226,42 +262,65 @@ GERBER_ARGS=()
 echo "Creating the interactive BOM (BOM/ibom.html)"
 ./run_pcbnew.sh generate_ibom.py ${PCBNAME}.kicad_pcb || { echo "Error on creating the interactive BOM."; exit 1; }
 
+# Official KiCad 5 symbol libraries for eeplot: the system ones (e.g. Debian
+# 11), otherwise a copy taken once from the KiCad 5 AppImage
+KICAD5_SYMBOLS=/usr/share/kicad/library
+if [ ! -f "${KICAD5_SYMBOLS}/power.lib" ]; then
+	KICAD5_SYMBOLS=${HOME}/.cache/kicad5/library
+	if [ ! -f "${KICAD5_SYMBOLS}/power.lib" ] && command -v kicad5 >/dev/null 2>&1; then
+		echo "Copying the KiCad 5 symbol libraries from the AppImage..."
+		kicad5 --python -c 'import os, shutil, sys; shutil.copytree(os.environ["KICAD_SYMBOL_DIR"], sys.argv[1] + ".partial"); os.rename(sys.argv[1] + ".partial", sys.argv[1])' "${KICAD5_SYMBOLS}"
+	fi
+fi
+
 echo "Creating PDF..."
-# Set KICAD_SYMBOL_DIR to help eeplot find libraries (though eeplot takes them as arguments)
-# export KICAD_SYMBOL_DIR="${KILIBPATH}:/usr/share/kicad/library"
-eeplot -o ${PDFOUTPUT} \
-    ${KILIBPATH}/CCAP0603.lib \
-    ${KILIBPATH}/CCAP0805.lib \
-    ${KILIBPATH}/CCAP1206.lib \
-    ${KILIBPATH}/CCAP1210.lib \
-    ${KILIBPATH}/CLED0805.lib \
-    ${KILIBPATH}/CLED1206.lib \
-    ${KILIBPATH}/CLED1210.lib \
-    ${KILIBPATH}/CRES0603.lib \
-    ${KILIBPATH}/CRES0805.lib \
-    ${KILIBPATH}/CRES1206.lib \
-    ${KILIBPATH}/CRES1210.lib \
-    ${KILIBPATH}/PES1-S5-S9-M.lib \
-    ${KILIBPATH}/TCAP3528.lib \
-    /usr/share/kicad/library/Connector.lib \
-    /usr/share/kicad/library/Mechanical.lib \
-    /usr/share/kicad/library/power.lib \
-    ${KILIBPATH}/RetroBitLab.lib \
+EEPLOT_FILES=(
+    ${KILIBPATH}/CCAP0603.lib
+    ${KILIBPATH}/CCAP0805.lib
+    ${KILIBPATH}/CCAP1206.lib
+    ${KILIBPATH}/CCAP1210.lib
+    ${KILIBPATH}/CLED0805.lib
+    ${KILIBPATH}/CLED1206.lib
+    ${KILIBPATH}/CLED1210.lib
+    ${KILIBPATH}/CRES0603.lib
+    ${KILIBPATH}/CRES0805.lib
+    ${KILIBPATH}/CRES1206.lib
+    ${KILIBPATH}/CRES1210.lib
+    ${KILIBPATH}/PES1-S5-S9-M.lib
+    ${KILIBPATH}/TCAP3528.lib
+    ${KICAD5_SYMBOLS}/Connector.lib
+    ${KICAD5_SYMBOLS}/Mechanical.lib
+    ${KICAD5_SYMBOLS}/power.lib
+    ${KILIBPATH}/RetroBitLab.lib
     ${PCBNAME}.sch
+)
+# Should the table of contents still fail (e.g. an eeplot built without
+# eeplot-pdf14-toc.patch), make the PDF without it (-T)
+if ! eeplot -o ${PDFOUTPUT} "${EEPLOT_FILES[@]}"; then
+	echo "eeplot failed, creating the PDF without table of contents..."
+	eeplot -T -o ${PDFOUTPUT} "${EEPLOT_FILES[@]}" || { echo "Error on creating the PDF."; exit 1; }
+fi
 
 # Official KiCad 5 3D models for kicad2step: the system ones (e.g. Debian
 # 11), otherwise a copy in ~/.cache/kicad5/packages3d
 KICAD5_3DMODELS=/usr/share/kicad/modules/packages3d
-[ -d "${KICAD5_3DMODELS}" ] || KICAD5_3DMODELS=${HOME}/.cache/kicad5/packages3d
+if [ ! -d "${KICAD5_3DMODELS}" ]; then
+	KICAD5_3DMODELS=${HOME}/.cache/kicad5/packages3d
+	if [ ! -d "${KICAD5_3DMODELS}" ] && command -v kicad5 >/dev/null 2>&1; then
+		echo "Copying the KiCad 5 3D models from the AppImage (about 5 GB, only once)..."
+		kicad5 --python -c 'import os, shutil, sys; shutil.copytree(os.environ["KISYS3DMOD"], sys.argv[1] + ".partial"); os.rename(sys.argv[1] + ".partial", sys.argv[1])' "${KICAD5_3DMODELS}"
+	fi
+fi
 mkdir -p images
 
 echo "Creating STEP 3D object..."
-# kicad2step of KiCad 5 runs outside the flatpak, so it sees the 3D models in
+# kicad2step of KiCad 5 (the system one, otherwise the AppImage one through
+# run_kicad5.sh) runs outside the flatpak, so it sees the 3D models in
 # /usr/share/kicad and ${KILIBPATH} (it takes the .step next to each .wrl by
 # itself). Its board is the KiCad 5 green (69,170,69): recoloured to the
 # solder mask green of the KiCad 7+ export (80,124,105)
-if command -v kicad2step >/dev/null 2>&1; then
-	KISYS3DMOD=${KICAD5_3DMODELS} kicad2step -f --grid-origin -o images/${PCBNAME}.step ${PCBNAME}.kicad_pcb || { echo "Error on creating the STEP file."; exit 1; }
+if ./run_kicad5.sh --check; then
+	KISYS3DMOD=${KICAD5_3DMODELS} ./run_kicad5.sh kicad2step -f --grid-origin -o images/${PCBNAME}.step ${PCBNAME}.kicad_pcb || { echo "Error on creating the STEP file."; exit 1; }
 	sed -i -E "s/COLOUR_RGB\('([^']*)',0\.27169[0-9]*,0\.66518[0-9]*,0\.27169[0-9]*\)/COLOUR_RGB('\1',0.313304153717,0.484529207832,0.410020903123)/" images/${PCBNAME}.step
 else
 	${KICADCLI} pcb export step -o images/${PCBNAME}.step --force --grid-origin --no-dnp --subst-models ${PCBNAME}.kicad_pcb

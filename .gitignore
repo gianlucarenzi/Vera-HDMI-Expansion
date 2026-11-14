@@ -12,3 +12,5 @@ eeplot-src/
 /VERA-HDMI-Expansion.dsn
 /VERA-HDMI-Expansion.ses
 *.sch-bak
+# created by KiCad 7+ (kicad-cli) when exporting the 3D models
+*.kicad_prl
