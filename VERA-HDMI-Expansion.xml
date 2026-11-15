@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/debian/Progetti/ATARI/Vera-HDMI-Expansion/VERA-HDMI-Expansion.sch</source>
-    <date>Sat 14 Nov 2026 12:50:18 PM CET</date>
+    <date>Sun 15 Nov 2026 12:10:56 PM CET</date>
     <tool>kicadcli 1.2 (KiCad 5 legacy schematic, pcbnew 5)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -22,22 +22,22 @@
     <comp ref="C7">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F2BB93</tstamp>
     </comp>
     <comp ref="C8">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F2C896</tstamp>
     </comp>
@@ -55,154 +55,154 @@
     <comp ref="C13">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F56291</tstamp>
     </comp>
     <comp ref="C14">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F56298</tstamp>
     </comp>
     <comp ref="C20">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F5D82F</tstamp>
     </comp>
     <comp ref="C21">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F5D836</tstamp>
     </comp>
     <comp ref="C22">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F78B7D</tstamp>
     </comp>
     <comp ref="C23">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F78B84</tstamp>
     </comp>
     <comp ref="C24">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904A992</tstamp>
     </comp>
     <comp ref="C25">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904AB35</tstamp>
     </comp>
     <comp ref="C28">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904AB52</tstamp>
     </comp>
     <comp ref="C29">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904AB5D</tstamp>
     </comp>
     <comp ref="C31">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904AB7B</tstamp>
     </comp>
     <comp ref="C32">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904AB86</tstamp>
     </comp>
     <comp ref="C33">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904ABA4</tstamp>
     </comp>
     <comp ref="C34">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>6904ABAF</tstamp>
     </comp>
@@ -275,44 +275,44 @@
     <comp ref="R9">
       <value>10K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <datasheet>https://lcsc.com/datasheet/lcsc_datasheet_2506161110_YAGEO-RC0805FR-0710KL_C84376.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C17414.pdf</datasheet>
       <fields>
-        <field name="LCSC">C84376</field>
+        <field name="LCSC">C17414</field>
       </fields>
-      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±100ppm/℃ ±1% 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
+      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±1% ±100ppm/℃ 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>69727F53</tstamp>
     </comp>
     <comp ref="R6">
       <value>10K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <datasheet>https://lcsc.com/datasheet/lcsc_datasheet_2506161110_YAGEO-RC0805FR-0710KL_C84376.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C17414.pdf</datasheet>
       <fields>
-        <field name="LCSC">C84376</field>
+        <field name="LCSC">C17414</field>
       </fields>
-      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±100ppm/℃ ±1% 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
+      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±1% ±100ppm/℃ 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>697274EA</tstamp>
     </comp>
     <comp ref="R11">
       <value>10K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <datasheet>https://lcsc.com/datasheet/lcsc_datasheet_2506161110_YAGEO-RC0805FR-0710KL_C84376.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C17414.pdf</datasheet>
       <fields>
-        <field name="LCSC">C84376</field>
+        <field name="LCSC">C17414</field>
       </fields>
-      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±100ppm/℃ ±1% 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
+      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±1% ±100ppm/℃ 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>696BA3AC</tstamp>
     </comp>
     <comp ref="R12">
       <value>10K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <datasheet>https://lcsc.com/datasheet/lcsc_datasheet_2506161110_YAGEO-RC0805FR-0710KL_C84376.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C17414.pdf</datasheet>
       <fields>
-        <field name="LCSC">C84376</field>
+        <field name="LCSC">C17414</field>
       </fields>
-      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±100ppm/℃ ±1% 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
+      <libsource lib="CRES0805" part="10K" description="125mW Thick Film Resistor 150V ±1% ±100ppm/℃ 10kΩ 0805 Chip Resistor - Surface Mount ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>696B96ED</tstamp>
     </comp>
@@ -341,11 +341,11 @@
     <comp ref="C30">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>69646615</tstamp>
     </comp>
@@ -429,44 +429,44 @@
     <comp ref="C2">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>69304DD5</tstamp>
     </comp>
     <comp ref="C1">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>69304AD6</tstamp>
     </comp>
     <comp ref="C19">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>692EB360</tstamp>
     </comp>
     <comp ref="C18">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>692EB0DD</tstamp>
     </comp>
@@ -484,44 +484,44 @@
     <comp ref="C10">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>692D77FE</tstamp>
     </comp>
     <comp ref="C9">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>692D77F3</tstamp>
     </comp>
     <comp ref="C4">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>692D77D1</tstamp>
     </comp>
     <comp ref="C3">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>692D75BC</tstamp>
     </comp>
@@ -539,44 +539,44 @@
     <comp ref="C12">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>69239427</tstamp>
     </comp>
     <comp ref="C11">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>69239420</tstamp>
     </comp>
     <comp ref="C6">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F60A23</tstamp>
     </comp>
     <comp ref="C5">
       <value>22uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C86817.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C45783.pdf</datasheet>
       <fields>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
-      <libsource lib="CCAP0805" part="22uF" description="16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="22uF" description="25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F60A1C</tstamp>
     </comp>
@@ -624,22 +624,22 @@
     <comp ref="C15">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F2E53E</tstamp>
     </comp>
     <comp ref="C17">
       <value>100nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C840116.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C28233.pdf</datasheet>
       <fields>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
-      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <libsource lib="CCAP0805" part="100nF" description="100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68F2EF2F</tstamp>
     </comp>
@@ -664,11 +664,11 @@
     <comp ref="LD1">
       <value>GREEN</value>
       <footprint>LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
-      <datasheet>https://www.lcsc.com/datasheet/C84260.pdf</datasheet>
+      <datasheet>https://www.lcsc.com/datasheet/C2297.pdf</datasheet>
       <fields>
-        <field name="LCSC">C84260</field>
+        <field name="LCSC">C2297</field>
       </fields>
-      <libsource lib="CLED0805" part="GREEN" description="20mA 400mcd 525nm~537.5nm -30℃~+85℃ Green 130° 72mW 2.5V~3.6V 0805 LED Indication - Discrete ROHS"/>
+      <libsource lib="CLED0805" part="GREEN" description="5mA 175~430mcd 513nm~528nm -40℃~+85℃ Green 120° 100mW 2.6V~3.1V 0805 LED Indication - Discrete ROHS"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>68FF3C97</tstamp>
     </comp>
@@ -782,13 +782,13 @@
       </pins>
     </libpart>
     <libpart lib="CCAP0805" part="100nF">
-      <description>100V 100nF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS</description>
-      <docs>https://www.lcsc.com/datasheet/C840116.pdf</docs>
+      <description>100V 100nF X7R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS</description>
+      <docs>https://www.lcsc.com/datasheet/C28233.pdf</docs>
       <fields>
         <field name="Reference">C</field>
         <field name="Value">100nF</field>
         <field name="Footprint">Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</field>
-        <field name="LCSC">C840116</field>
+        <field name="LCSC">C28233</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>
@@ -796,13 +796,13 @@
       </pins>
     </libpart>
     <libpart lib="CCAP0805" part="22uF">
-      <description>16V 22uF X7R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS</description>
-      <docs>https://www.lcsc.com/datasheet/C86817.pdf</docs>
+      <description>25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS</description>
+      <docs>https://www.lcsc.com/datasheet/C45783.pdf</docs>
       <fields>
         <field name="Reference">C</field>
         <field name="Value">22uF</field>
         <field name="Footprint">Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</field>
-        <field name="LCSC">C86817</field>
+        <field name="LCSC">C45783</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>
@@ -824,13 +824,13 @@
       </pins>
     </libpart>
     <libpart lib="CLED0805" part="GREEN">
-      <description>20mA 400mcd 525nm~537.5nm -30℃~+85℃ Green 130° 72mW 2.5V~3.6V 0805 LED Indication - Discrete ROHS</description>
-      <docs>https://www.lcsc.com/datasheet/C84260.pdf</docs>
+      <description>5mA 175~430mcd 513nm~528nm -40℃~+85℃ Green 120° 100mW 2.6V~3.1V 0805 LED Indication - Discrete ROHS</description>
+      <docs>https://www.lcsc.com/datasheet/C2297.pdf</docs>
       <fields>
         <field name="Reference">LD</field>
         <field name="Value">GREEN</field>
         <field name="Footprint">LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder</field>
-        <field name="LCSC">C84260</field>
+        <field name="LCSC">C2297</field>
       </fields>
       <pins>
         <pin num="1" name="K" type="passive"/>
@@ -880,13 +880,13 @@
       </pins>
     </libpart>
     <libpart lib="CRES0805" part="10K">
-      <description>125mW Thick Film Resistor 150V ±100ppm/℃ ±1% 10kΩ 0805 Chip Resistor - Surface Mount ROHS</description>
-      <docs>https://lcsc.com/datasheet/lcsc_datasheet_2506161110_YAGEO-RC0805FR-0710KL_C84376.pdf</docs>
+      <description>125mW Thick Film Resistor 150V ±1% ±100ppm/℃ 10kΩ 0805 Chip Resistor - Surface Mount ROHS</description>
+      <docs>https://www.lcsc.com/datasheet/C17414.pdf</docs>
       <fields>
         <field name="Reference">R</field>
         <field name="Value">10K</field>
         <field name="Footprint">Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</field>
-        <field name="LCSC">C84376</field>
+        <field name="LCSC">C17414</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>
